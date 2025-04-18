@@ -1,0 +1,19 @@
+import A: A모듈을 load
+import A: A패키지 밑의 __init__ 모듈을 load
+from A import B : A패키지 안의 B 모듈 load
+from A import B : A모듈안의 B함수 load
+from A.B import C : A 패키지밑의 B모듈안의 C 함수 load 
+
+import A as L: A모듈을 L 이름으로 load
+import A as L: A패키지 밑의 __init__ 모듈을 load
+from A import B as L: A패키지 안의 B 모듈을 L 별칭으로 load
+from A import B as L : A모듈안의 B함수를 L 이름으로 load
+from A.B import C as L: A 패키지밑의 B모듈안의 C 함수를 L 이름으로 load 
+
+2절 패키지 설치 및 삭제
+pip installl 패키지 / conda install 패키지
+pip show 패키지       conda list 패키지
+pip uninstall 패키지  conda remove 패키지명
+
+패키지 아래 __init__.py 패키지 설정 내용이 추가* 
+
