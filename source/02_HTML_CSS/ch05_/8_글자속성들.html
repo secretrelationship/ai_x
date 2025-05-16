@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Dongle-Regular';
+            src: url('ch05/Dongle-Regular.ttf')
+        }
+
+        p.localfont {
+            line-height: 40px; /*행간격늘리기*/
+            font-family: 'Dongle-Regular',serif;
+        }
+
+        p.webfont {
+            font-family: "Single Day", cursive;
+            font-weight: 400;
+        }
+
+        p.webfont2 {
+            font-family: "Cute Font", sans-serif;
+            font-weight: 400
+        }
+    </style>
+</head>
+<body>
+<p class="localfont">
+    다운받은 ttf 파일을 내 경로안에 넣고 font-face 설정한 후 사용: 준서야 사랑해
+</p>
+<p class="webfont">
+    font.google.com의 인터넷 폰트 사용: 정우야 사랑해
+</p>
+<p class="webfont2">
+    font.google.com의 인터넷 폰트 사용: 호영아 사랑해
+</p>
+</body>
+</html>

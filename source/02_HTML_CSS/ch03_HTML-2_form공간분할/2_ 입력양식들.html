@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script>
+        function chk() {// submit이 안 일어나는 조건: name, value, length <2.title.value가 빈스트링
+            if (!frm.title, value) {
+                alert('글제목은 필수입력사항입니다');
+                frm.title.focus()//frm.title에 포커싱(커서가 위치)
+                return false; //이벤트제한
+            }
+            else if (frm.name.value.length < 2) {
+                alert('작성자명은 2글자 이상입니다');
+                frm.name.focus();
+                return false; // submit 이벤트 제한 
+            }
+            return true;
+        }
+
+    </script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<form action="">
+    <table>
+        <tr>
+            <td> 아이디 </td>
+            <td>
+                <input type="text" name="id" size="9"
+                       required="required"
+                       placeholder="필수입력사항(입력전에 보이는 도움말)"/>
+                <input type="button" value="중복확인" />
+            </td>
+        </tr>
+        <tr>
+            <td>전화번호</td>
+            <td>
+                <input type="tel" name="tel1" size="1" /> -
+                <input type="tel" name="tel2" size="1" /> -
+                <input type="tel" name="tel3" size="1" /> -
+            </td>
+        </tr>
+        <tr>
+            <td>경력</td>
+            <td><input type="number" name="career" />년</td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input type='email' name="filename" /></td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                <input type="radio" name="gender" value="m" checked="checked" />남
+                <input type="radio" name="gender" value="f" />여
+            </td>
+        </tr>
+        <tr>
+            <td>사용언어</td>
+            <td>
+                <input type="checkbox" name="lang" value="kor" checked="checked" />한국어
+                <input type="checkbox" name="lang" value="eng" />영어
+                <input type="checkbox" name="lang" value="chi" />중국어
+            </td>
+        </tr>
+        <tr>
+            <td>국적</td>
+            <td>
+                <select name="nation">
+                    <option value="ko">대한민국</option>
+                    <option>인도</option>
+                    <option>중국</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>좋아하는 음식</td>
+            <td>
+                <select name="food" multiple="multiple" size="3">
+                    <option>볶음밥</option>
+                    <option>비빔밥</option>
+                    <option>주먹밥</option>
+                    <option>덮밥</option>
+                </select>
+            </td>
+        </tr>
+        
+        
+        
+        
+        
+        
+        <tr>
+            <th colspan="2">
+                <input type="submit" value="입력" />
+                <input type="reset" value="초기화" />
+            </th>
+        </tr>
+
+
+    </table>
+</form>
+</body>
+</html>
