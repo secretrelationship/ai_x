@@ -1,0 +1,20 @@
+#wrap{
+  width:600px; 
+  margin: 0 auto;
+  border: 1px solid gray;
+  padding: 10px;
+}
+#wrap hr{
+  border: 1px solid red;
+}
+#wrap .title{
+  text-align: center;
+  text-decoration: underline;
+  margin: 30px;
+}
+#wrap .content{
+  background-color: darkgreen;
+  color:white;
+  padding: 30px;
+  text-align: justify;
+}
