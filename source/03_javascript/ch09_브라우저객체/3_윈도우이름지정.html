@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <title></title>
+  <style>
+    
+  </style>
+  <script>
+    const openwin = function(){
+        var child = open('','childwin','width=700,height=500');
+        if(!child){
+          alert('팝업해제요청');
+        }
+    };
+  </script>
+</head>
+<body>
+  <button onclick="openwin()">새창열기</button> 
+<br>
+<a href="https://watcha.com/contents/tR72Kgn?search_id=ba9a604a-b23d-42ba-9455-a3bf63b43593" target="childwin">비밀사이</a>
+</body>
+</html>
