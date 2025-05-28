@@ -10,7 +10,48 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script>
     $(function(){
-  	  
+			// 1. #id의 keyup이벤트에 $.ajax() 구현(#idConfirmResult결과 출력)
+			$('#id').keyup(function(){
+				var id = $(this).val();
+				if(id.length<3){
+					$('#idConfirmResult').html('아이디는 2글자 이상');
+				}else{
+					$.ajax({
+						url : 'nonExists.html',
+						type: 'get',
+						data : {id:id},
+						dataType : 'html',
+						success : data => $('#idConfirmResult').html(data),
+					});
+				}
+			}); // id의 keyup 이벤트
+			// 2. (#pw, #pwChk)의 keyup이벤트 : 두 비밀번호 비교 체크(#pwChkResult 결과 출력)
+			$('#pw, #pwChk').keyup(()=>{
+				let pw = $('#pw').val();
+				let pwChk = $('#pwChk').val();
+				if(!pw && !pwChk){
+					$('#pwChkResult').text('비밀번호는 필수 입력 사항입니다');
+				}else if(pw === pwChk){
+					$('#pwChkResult').text('비밀번호가 일치합니다');
+				}else{
+					$('#pwChkResult').text('비밀번호가 불일치합니다');
+				}
+			}); // pw의 keyup이벤트
+			// 3. ('form')의 submit이벤트 : #idConfirmResult, #pwChkResult 유효성
+			$('form').submit(()=>{
+				// "사용 가능한 ID입니다"(#idConfirmResult), "비밀번호가 일치합니다(#pwChkResult)" 경우만 submit
+				var idConfirmResult = $('#idConfirmResult').text().trim();
+				var pwChkResult     = $('#pwChkResult').text().trim();
+				if(idConfirmResult != '사용 가능한 ID입니다'){
+					alert('사용 가능한 ID 확인 요망');
+					$('#id').focus();
+					return false; // submit 제한
+				}else if(pwChkResult != '비밀번호가 일치합니다'){
+					alert('비밀번호를 확인하세요');
+					$('#pw').focus();
+					return false;
+				}
+			});// submit 이벤트
     });
   </script>
 </head>
@@ -57,4 +98,3 @@
 	</div>
 </body>
 </html>
-
